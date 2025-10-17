@@ -37,6 +37,16 @@
       z-index: 1;
       text-align: center;
     }
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 22px rgba(0,0,0,0.18);
+      background: #222;
+    }
     .center-content h1 {
       font-size: 2.7rem;
       font-weight: bold;
@@ -109,12 +119,18 @@
       .bg-img {
         filter: brightness(0.6) blur(1px);
       }
+      .profile-photo {
+        width: 84px;
+        height: 84px;
+        margin-bottom: 17px;
+      }
     }
   </style>
 </head>
 <body>
   <img class="bg-img" src="photo.jpg" alt="Background" />
   <div class="center-content">
+    <img class="profile-photo" src="profile.jpg" alt="Yashwant Gowda profile" />
     <h1>Yashwant Gowda</h1>
     <div class="subtitle">System Development Engineer</div>
     <div class="location">Bangalore, India</div>
