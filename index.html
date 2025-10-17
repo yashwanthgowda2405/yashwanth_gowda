@@ -11,37 +11,56 @@
       color: #f0f0f0;
       margin: 0;
       padding: 0;
-      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .container {
-      max-width: 500px;
-      margin: 80px auto;
       background: #222;
-      padding: 40px 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #0c0c0c;
+      padding: 48px 32px;
+      border-radius: 12px;
+      box-shadow: 0 0 24px #1a1a1a;
+      text-align: center;
+      width: 360px;
     }
     h1 {
-      margin-bottom: 25px;
+      margin-bottom: 28px;
       color: #40a9ff;
+      font-size: 2.2em;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+    .links {
+      margin: 12px 0;
     }
     .links a {
       display: inline-block;
-      margin: 10px 15px;
-      font-size: 20px;
-      color: #f0f0f0;
+      margin: 12px 18px;
+      font-size: 1.1em;
+      color: #eeeeee;
       text-decoration: none;
       transition: color 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
     }
     .links a.linkedin:hover {
       color: #0A66C2;
+      border-bottom: 2px solid #0A66C2;
     }
     .links a.github:hover {
       color: #6e5494;
+      border-bottom: 2px solid #6e5494;
     }
     .icon {
       vertical-align: middle;
+      font-size: 1.25em;
       margin-right: 8px;
+    }
+    .footer {
+      margin-top: 36px;
+      color: #888;
+      font-size: 0.95em;
     }
   </style>
 </head>
@@ -55,6 +74,9 @@
       <a href="https://github.com/yashwanthgowda2405" target="_blank" class="github">
         <span class="icon">🐙</span>GitHub
       </a>
+    </div>
+    <div class="footer">
+      &copy; 2025 Yashwant Gowda
     </div>
   </div>
 </body>
