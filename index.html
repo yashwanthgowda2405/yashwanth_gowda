@@ -1,148 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Yashwant Gowda – System Development Engineer</title>
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #181818;
-      color: #fff;
+    :root{
+      --bg:#0f0f0f;
+      --muted:#dcdcdc;
+      --accent:#f4e87b;
+      --card-bg: rgba(255,255,255,0.04);
     }
-    body {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
+    html,body{height:100%;margin:0;font-family: "Segoe UI", Arial, sans-serif;background:var(--bg);color:#fff;}
+    /* use a CSS background so missing image won't remove content */
+    .page-bg{
+      position:fixed; inset:0;
+      background-color:#111;
+      background-image: url("background.jpg");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      filter:brightness(.6);
+      z-index:-2;
     }
-    .bg-img {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(0.55) blur(0.5px);
-      transition: filter 0.3s;
+
+    /* subtle overlay to ensure text contrast */
+    .overlay{
+      position:fixed; inset:0;
+      background: linear-gradient(rgba(6,6,6,0.25), rgba(6,6,6,0.25));
+      z-index:-1;
     }
-    .center-content {
-      z-index: 1;
-      text-align: center;
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+      box-sizing:border-box;
+      text-align:center;
     }
-    .profile-photo {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      margin-bottom: 28px;
-      box-shadow: 0 2px 22px rgba(0,0,0,0.18);
-      background: #222;
+
+    .card{
+      max-width:760px;
+      width:100%;
+      padding:28px 26px;
+      border-radius:12px;
+      background:var(--card-bg);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
     }
-    .center-content h1 {
-      font-size: 2.7rem;
-      font-weight: bold;
-      letter-spacing: 0.04em;
-      margin-bottom: 18px;
-      margin-top: 0;
-      text-shadow: 0 1px 10px rgba(0,0,0,0.30);
+
+    .avatar{
+      width:140px;height:140px;border-radius:50%;
+      display:inline-block;object-fit:cover;border:4px solid #fff;
+      box-shadow:0 6px 30px rgba(0,0,0,0.45);background:#222;margin-bottom:20px;
     }
-    .subtitle {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      opacity: 0.90;
-      letter-spacing: 0.05em;
-      text-shadow: 0 1px 5px rgba(0,0,0,0.20);
+
+    /* fallback initials if image missing */
+    .initials {
+      width:140px;height:140px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:42px;font-weight:600;color:#fff;background:#2b2b2b;border:4px solid #fff;
+      margin:0 auto 20px auto;
+      box-shadow:0 6px 30px rgba(0,0,0,0.45);
     }
-    .location {
-      margin-bottom: 22px;
-      font-size: 1rem;
-      color: #f4e87b;
-      opacity: 0.8;
-      letter-spacing: 0.03em;
-      text-shadow: 0 1px 7px rgba(60,60,60,0.12);
-    }
-    .links {
-      margin-bottom: 25px;
-    }
-    .links a {
-      display: inline-block;
-      margin: 0 12px;
-      font-size: 1.18rem;
-      color: #e3e3e3;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .links a.linkedin:hover {
-      color: #0a66c2;
-      border-bottom: 2px solid #0a66c2;
-    }
-    .links a.github:hover {
-      color: #9b59b6;
-      border-bottom: 2px solid #9b59b6;
-    }
-    .links .icon {
-      margin-right: 6px;
-      font-size: 1.18em;
-      vertical-align: middle;
-    }
-    footer {
-      position: fixed;
-      bottom: 18px;
-      width: 100vw;
-      text-align: center;
-      font-size: 1em;
-      color: #efefefbb;
-      letter-spacing: 2px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.13);
-    }
-    @media (max-width:600px) {
-      .center-content h1 {
-        font-size: 1.5rem;
-      }
-      .subtitle {
-        font-size: 1rem;
-      }
-      .links a {
-        font-size: 1em;
-      }
-      .bg-img {
-        filter: brightness(0.6) blur(1px);
-      }
-      .profile-photo {
-        width: 84px;
-        height: 84px;
-        margin-bottom: 17px;
-      }
+
+    h1{margin:0;font-size:2.4rem;letter-spacing:0.02em;text-shadow:0 1px 6px rgba(0,0,0,0.4)}
+    .role{margin-top:10px;margin-bottom:6px;font-weight:500;color:var(--muted);font-size:1.05rem}
+    .location{color:var(--accent);opacity:.95;margin-bottom:16px}
+
+    .links{margin-top:12px}
+    .links a{margin:0 10px;text-decoration:none;color:var(--muted);font-weight:600;padding:6px 8px;border-radius:6px;display:inline-block}
+    .links a:hover{color:#fff;transform:translateY(-2px)}
+
+    footer{margin-top:18px;color:rgba(255,255,255,0.65);font-size:0.95rem}
+
+    @media (max-width:520px){
+      .card{padding:20px}
+      h1{font-size:1.4rem}
+      .avatar, .initials{width:92px;height:92px}
+      .links a{display:block;margin:8px 0}
     }
   </style>
 </head>
 <body>
-  <img class="bg-img" src="background.jpg" alt="Background" />
-  <div class="center-content">
-    <img class="profile-photo" src="profile.jpg" alt="Yashwant Gowda profile" />
-    <h1>Yashwant Gowda</h1>
-    <div class="subtitle">System Development Engineer</div>
-    <div class="location">Bangalore, India</div>
-    <div class="links">
-      <a href="https://www.linkedin.com/in/yashwanth-kumar-m-c-689711279" target="_blank" class="linkedin">
-        <span class="icon">🔗</span>LinkedIn
-      </a>
-      <a href="https://github.com/yashwanthgowda2405" target="_blank" class="github">
-        <span class="icon">🐙</span>GitHub
-      </a>
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="overlay" aria-hidden="true"></div>
+
+  <main class="wrap" role="main">
+    <section class="card" aria-labelledby="name">
+      <!-- If profile.jpg exists it will show, otherwise the <img> onerror will hide and we show initials -->
+      <img id="avatarImg" class="avatar" src="profile.jpg" alt="Yashwant Gowda" onerror="this.style.display='none';document.getElementById('initials').style.display='flex'">
+      <div id="initials" class="initials" style="display:none">YG</div>
+
+      <h1 id="name">Yashwant Gowda</h1>
+      <div class="role">System Development Engineer</div>
+      <div class="location">Bangalore, India</div>
+
+      <div class="links" aria-label="Social links">
+        <a class="linkedin" href="https://www.linkedin.com/in/yashwanth-kumar-m-c-689711279" target="_blank" rel="noopener noreferrer">
+          🔗 LinkedIn
+        </a>
+        <a class="github" href="https://github.com/yashwanthgowda2405" target="_blank" rel="noopener noreferrer">
+          🐙 GitHub
+        </a>
+      </div>
+
+      <footer>&copy; <span id="year"></span> Yashwant Gowda</footer>
+    </section>
+  </main>
+
+  <noscript>
+    <div style="position:fixed;left:0;right:0;top:0;background:#ffeb3b;color:#000;padding:8px;text-align:center;font-weight:600;">
+      JavaScript is disabled — content may appear differently. Please enable JavaScript.
     </div>
-  </div>
-  <footer>&copy; 2025 Yashwant Gowda</footer>
+  </noscript>
+
+  <script>
+    // small script to set current year and ensure content appears even if images missing
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // quick debug: if the page is completely blank, this will reveal a console-string.
+    console.log("Page loaded: index.html (improved) — images expected at /profile.jpg and /background.jpg");
+  </script>
 </body>
 </html>
