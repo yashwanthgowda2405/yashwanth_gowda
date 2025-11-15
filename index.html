@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Yashwant Gowda</title>
 
-  <!-- Link to your stylesheet - adjust path if your CSS is in a different folder -->
+  <!-- Link to your stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -28,19 +28,36 @@
       <div class="container">
         <!-- Centered card -->
         <div class="card" style="max-width:720px;margin:0 auto;padding:3rem 2rem;text-align:center;">
+          
           <img src="https://github.com/yashwanthgowda2405/yashwanth_gowda/blob/main/profile.jpg?raw=true"
-               alt="profile" style="width:110px;height:110px;border-radius:50%;object-fit:cover;border:4px solid #fff;display:block;margin:0 auto 1rem;" />
+               alt="profile"
+               style="width:110px;height:110px;border-radius:50%;object-fit:cover;border:4px solid #fff;display:block;margin:0 auto 1rem;" />
+
           <h1 style="margin:0 0 .4rem;font-size:2rem;">Yashwant Gowda</h1>
           <div style="color:var(--muted);margin-bottom:.6rem;">System Development Engineer</div>
           <div style="color:#f0c84a;margin-bottom:1rem;">Bangalore, India</div>
 
           <p style="max-width:560px;margin:0 auto 1rem;color:rgba(255,255,255,0.9);">
-            Welcome — I build infrastructure and cloud systems. Here are some links and projects.
+            Welcome — I build infrastructure, cloud systems and modern automation pipelines.
+            Connect with me below!
           </p>
 
+          <!-- ⭐ Updated social links -->
           <div class="socials" style="display:flex;gap:1rem;justify-content:center;">
-            <a href="#" class="btn">LinkedIn</a>
-            <a href="#" class="btn" style="background:#333;">GitHub</a>
+            
+            <a href="https://www.linkedin.com/in/yashwanth-kumar-m-c-689711279"
+               class="btn"
+               target="_blank">
+               LinkedIn
+            </a>
+
+            <a href="https://github.com/yashwanthgowda2405"
+               class="btn"
+               style="background:#333;"
+               target="_blank">
+               GitHub
+            </a>
+
           </div>
 
           <div style="margin-top:1rem;color:#bbb;font-size:.85rem;">© 2025 Yashwant Gowda</div>
@@ -48,11 +65,16 @@
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="section container alt-bg" style="margin-top:2rem;">
       <h2>About</h2>
-      <p>Short bio / description goes here.</p>
+      <p>
+        I am a System Development Engineer with strong experience in Linux, cloud systems, automation,
+        infrastructure and modern DevOps practices.
+      </p>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="section container">
       <h2>Projects</h2>
       <div class="grid">
@@ -62,9 +84,31 @@
       </div>
     </section>
 
+    <!-- CONTACT (Updated with real info) -->
     <section id="contact" class="section container alt-bg">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+
+      <p><strong>Email:</strong>
+        <a href="mailto:yashwanthgowda@yashwanthgowdamc.com">
+          yashwanthgowda@yashwanthgowdamc.com
+        </a>
+      </p>
+
+      <p><strong>Mobile:</strong>
+        <a href="tel:9606065205">9606065205</a>
+      </p>
+
+      <p><strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/yashwanth-kumar-m-c-689711279" target="_blank">
+          linkedin.com/in/yashwanth-kumar-m-c-689711279
+        </a>
+      </p>
+
+      <p><strong>GitHub:</strong>
+        <a href="https://github.com/yashwanthgowda2405" target="_blank">
+          github.com/yashwanthgowda2405
+        </a>
+      </p>
     </section>
   </main>
 
@@ -73,7 +117,7 @@
   </footer>
 
   <script>
-    // Mobile nav toggle (keeps things simple)
+    // Mobile nav toggle
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.site-nav');
     if (toggle && nav) {
