@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Yashwant Gowda</title>
 
-  <!-- Link to your stylesheet -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Icon Library (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
   <header>
     <div class="container header-inner">
@@ -26,9 +30,9 @@
   <main>
     <section class="hero">
       <div class="container">
-        <!-- Centered card -->
+        <!-- Profile Card -->
         <div class="card" style="max-width:720px;margin:0 auto;padding:3rem 2rem;text-align:center;">
-          
+
           <img src="https://github.com/yashwanthgowda2405/yashwanth_gowda/blob/main/profile.jpg?raw=true"
                alt="profile"
                style="width:110px;height:110px;border-radius:50%;object-fit:cover;border:4px solid #fff;display:block;margin:0 auto 1rem;" />
@@ -42,25 +46,27 @@
             Connect with me below!
           </p>
 
-          <!-- ⭐ Updated social links -->
-          <div class="socials" style="display:flex;gap:1rem;justify-content:center;">
-            
+          <!-- ⭐ Social Icons -->
+          <div class="socials" style="display:flex;gap:1.6rem;justify-content:center;font-size:2rem;margin-top:1.2rem;">
+
+            <!-- LinkedIn -->
             <a href="https://www.linkedin.com/in/yashwanth-kumar-m-c-689711279"
-               class="btn"
-               target="_blank">
-               LinkedIn
+               target="_blank"
+               style="color:#0A66C2;">
+              <i class="fab fa-linkedin"></i>
             </a>
 
+            <!-- GitHub -->
             <a href="https://github.com/yashwanthgowda2405"
-               class="btn"
-               style="background:#333;"
-               target="_blank">
-               GitHub
+               target="_blank"
+               style="color:white;">
+              <i class="fab fa-github"></i>
             </a>
 
           </div>
 
           <div style="margin-top:1rem;color:#bbb;font-size:.85rem;">© 2025 Yashwant Gowda</div>
+
         </div>
       </div>
     </section>
@@ -69,8 +75,8 @@
     <section id="about" class="section container alt-bg" style="margin-top:2rem;">
       <h2>About</h2>
       <p>
-        I am a System Development Engineer with strong experience in Linux, cloud systems, automation,
-        infrastructure and modern DevOps practices.
+        I am a System Development Engineer with strong experience in Linux, cloud systems,
+        automation, infrastructure and modern DevOps practices.
       </p>
     </section>
 
@@ -84,7 +90,7 @@
       </div>
     </section>
 
-    <!-- CONTACT (Updated with real info) -->
+    <!-- CONTACT -->
     <section id="contact" class="section container alt-bg">
       <h2>Contact</h2>
 
@@ -124,5 +130,6 @@
       toggle.addEventListener('click', () => nav.classList.toggle('open'));
     }
   </script>
+
 </body>
 </html>
