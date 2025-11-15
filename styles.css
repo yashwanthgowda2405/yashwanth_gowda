@@ -23,8 +23,7 @@ html,body{
 /* Smooth scrolling */
 html { scroll-behavior: smooth; }
 
-/* Background image (webp preferred, fallback to jpg) */
-/* Upload bg.webp and bg.jpg to repo root */
+/* Background: prefer webp if uploaded, fallback to raw GitHub jpg */
 body{
   min-height: 100vh;
   background-image: image-set(
@@ -65,7 +64,6 @@ header{
   top: 0;
   transition: background var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
 }
-/* when scrolled */
 header.scrolled{ background: rgba(0,0,0,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
 
 .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:0.85rem 0; }
@@ -104,7 +102,7 @@ header.scrolled{ background: rgba(0,0,0,0.6); box-shadow: 0 10px 30px rgba(0,0,0
 .social-link .icon{ width:22px; height:22px; display:block; fill:currentColor; }
 .social-link:hover{ transform: translateY(-4px); opacity:1; }
 
-/* subtle different colors */
+/* different colors for icons */
 .socials a:first-child{ color:#0A66C2; } /* linkedin */
 .socials a:last-child{ color: #fff; background: rgba(255,255,255,0.02); padding:6px; }
 
@@ -115,10 +113,29 @@ header.scrolled{ background: rgba(0,0,0,0.6); box-shadow: 0 10px 30px rgba(0,0,0
 .section{ padding:3rem 0; color: rgba(255,255,255,0.92); }
 .alt-bg{ background: var(--section-bg); backdrop-filter: blur(6px); padding:1rem; border-radius:10px; border:1px solid rgba(255,255,255,0.02); }
 
+/* ABOUT layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.25rem;
+  align-items: start;
+}
+.about-lead { margin: 0 0 1rem; color: rgba(255,255,255,0.95); line-height: 1.5; font-size: 1rem; }
+.about-highlights { list-style: none; padding: 0; margin: 0 0 1rem; color: rgba(255,255,255,0.9); }
+.about-highlights li { margin: .5rem 0; padding-left: .5rem; }
+.about-cta { margin-top: 1rem; display:flex; gap:0.75rem; flex-wrap:wrap; }
+.btn.secondary { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: #fff; }
+
+/* skills & stats */
+.skills { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem; }
+.skill { background: rgba(255,255,255,0.04); padding: .35rem .6rem; border-radius: 999px; font-size: .9rem; color: #fff; border: 1px solid rgba(255,255,255,0.02); }
+.stats { display:flex; gap:1rem; margin-top:0.6rem; align-items:center; }
+.stat { background: rgba(255,255,255,0.03); padding:0.6rem 0.9rem; border-radius:8px; text-align:center; min-width:72px; }
+.stat strong { display:block; font-size:1.1rem; }
+.stat-label { font-size:0.8rem; color: rgba(255,255,255,0.8); margin-top:0.2rem; }
+
 /* grid */
 .grid{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
-
-/* card (generic) */
 .card{ padding:1rem; background: rgba(0,0,0,0.45); border-radius:10px; border:1px solid rgba(255,255,255,0.03); color:#fff; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
 .card:hover{ transform: translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.5); }
 
@@ -126,7 +143,8 @@ header.scrolled{ background: rgba(0,0,0,0.6); box-shadow: 0 10px 30px rgba(0,0,0
 footer{ text-align:center; padding:1rem 0; border-top:1px solid rgba(255,255,255,0.03); color:#ccc; }
 
 /* responsive */
-@media (max-width:1024px){ .hero{ padding:3rem 0; } .hero .name{ font-size:1.8rem; } .hero-card{ padding:2.4rem 1.5rem; } }
+@media (max-width:1024px){ .hero{ padding:3rem 0; } .name{ font-size:1.8rem; } .hero-card{ padding:2.4rem 1.5rem; } }
+@media (max-width:860px){ .about-grid { grid-template-columns: 1fr; } .about-right { margin-top: 1rem; } }
 @media (max-width:768px){
   .site-nav{ display:none; flex-direction:column; }
   .site-nav.open{ display:flex; }
