@@ -11,7 +11,7 @@
   --text-muted: rgba(255,255,255,0.85);
 }
 
-/* Typography: use Inter */
+/* Typography */
 html,body{
   font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 400;
@@ -23,12 +23,13 @@ html,body{
 /* Smooth scrolling */
 html { scroll-behavior: smooth; }
 
-/* Background: prefer webp if uploaded, fallback to raw GitHub jpg */
+/* Background: prefer webp if uploaded, fallback to jpg */
 body{
   min-height: 100vh;
   background-image: image-set(
-    url('bg.webp') type('image/webp'),
-    url('https://raw.githubusercontent.com/yashwanthgowda2405/yashwanth_gowda/main/bg.jpg') type('image/jpeg')
+    url('/bg.webp') type('image/webp'),
+    url('/background.jpg') type('image/jpeg'),
+    url('/bg.jpg') type('image/jpeg')
   );
   background-size: cover;
   background-position: center;
@@ -37,7 +38,7 @@ body{
   position: relative;
 }
 
-/* overlay for improved contrast */
+/* overlay for contrast */
 body::before{
   content: "";
   position: fixed;
@@ -55,7 +56,7 @@ header, main, footer, .container, .card { position: relative; z-index: 1; }
   margin: 0 auto;
 }
 
-/* HEADER */
+/* Header */
 header{
   background: rgba(0,0,0,0.45);
   backdrop-filter: blur(6px);
@@ -71,15 +72,15 @@ header.scrolled{ background: rgba(0,0,0,0.6); box-shadow: 0 10px 30px rgba(0,0,0
 .brand{ color: var(--accent); font-weight:700; text-decoration:none; font-size:1.15rem; }
 .brand:hover{ opacity:0.95; transform: translateY(-1px); }
 
-/* NAV */
+/* Nav */
 .site-nav{ display:flex; gap:1rem; align-items:center; }
 .site-nav a{ color: var(--muted); text-decoration:none; font-weight:500; padding:6px 8px; border-radius:8px; transition: all var(--transition-fast); }
 .site-nav a:hover{ color:#fff; background: rgba(255,255,255,0.03); }
 
-/* mobile toggle */
+/* Mobile toggle */
 .nav-toggle{ display:none; background:none; border:0; font-size:1.5rem; color:var(--muted); }
 
-/* HERO */
+/* Hero */
 .hero{ padding:4rem 0; display:flex; align-items:center; justify-content:center; text-align:center; }
 
 .hero-card{ width:100%; max-width:720px; margin:0 auto; padding:3rem 2rem; border-radius: var(--radius); background:var(--card-bg); border:1px solid rgba(255,255,255,0.03); box-shadow: 0 20px 40px rgba(0,0,0,0.55); text-align:center; }
@@ -102,7 +103,7 @@ header.scrolled{ background: rgba(0,0,0,0.6); box-shadow: 0 10px 30px rgba(0,0,0
 .social-link .icon{ width:22px; height:22px; display:block; fill:currentColor; }
 .social-link:hover{ transform: translateY(-4px); opacity:1; }
 
-/* different colors for icons */
+/* icon colors */
 .socials a:first-child{ color:#0A66C2; } /* linkedin */
 .socials a:last-child{ color: #fff; background: rgba(255,255,255,0.02); padding:6px; }
 
@@ -114,12 +115,7 @@ header.scrolled{ background: rgba(0,0,0,0.6); box-shadow: 0 10px 30px rgba(0,0,0
 .alt-bg{ background: var(--section-bg); backdrop-filter: blur(6px); padding:1rem; border-radius:10px; border:1px solid rgba(255,255,255,0.02); }
 
 /* ABOUT layout */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 1.25rem;
-  align-items: start;
-}
+.about-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.25rem; align-items: start; }
 .about-lead { margin: 0 0 1rem; color: rgba(255,255,255,0.95); line-height: 1.5; font-size: 1rem; }
 .about-highlights { list-style: none; padding: 0; margin: 0 0 1rem; color: rgba(255,255,255,0.9); }
 .about-highlights li { margin: .5rem 0; padding-left: .5rem; }
@@ -134,7 +130,7 @@ header.scrolled{ background: rgba(0,0,0,0.6); box-shadow: 0 10px 30px rgba(0,0,0
 .stat strong { display:block; font-size:1.1rem; }
 .stat-label { font-size:0.8rem; color: rgba(255,255,255,0.8); margin-top:0.2rem; }
 
-/* grid */
+/* grid & cards */
 .grid{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
 .card{ padding:1rem; background: rgba(0,0,0,0.45); border-radius:10px; border:1px solid rgba(255,255,255,0.03); color:#fff; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
 .card:hover{ transform: translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.5); }
