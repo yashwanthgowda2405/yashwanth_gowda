@@ -18,7 +18,7 @@
 
       <nav>
         <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-        <div class="site-nav" id="siteNav">
+        <div class="site-nav" id="siteNav" role="navigation" aria-label="Primary">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
@@ -33,7 +33,6 @@
         <!-- Centered card -->
         <article class="card hero-card animate-enter">
           <picture class="profile-picture">
-            <!-- If you upload profile.webp, browser will prefer it -->
             <source srcset="profile.webp" type="image/webp">
             <img src="https://raw.githubusercontent.com/yashwanthgowda2405/yashwanth_gowda/main/profile.jpg"
                  alt="Yashwant Gowda"
@@ -73,14 +72,52 @@
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="section container alt-bg" aria-labelledby="aboutHeading">
       <h2 id="aboutHeading">About</h2>
-      <p>
-        I am a System Development Engineer with strong experience in Linux, cloud systems,
-        automation, infrastructure and modern DevOps practices.
-      </p>
+
+      <div class="about-grid">
+        <div class="about-left">
+          <p class="about-lead">
+            I'm <strong>Yashwant Gowda</strong>, a System Development Engineer based in Bangalore.
+            I design and build resilient infrastructure, automation pipelines and cloud-native systems that help teams deploy faster and operate reliably.
+          </p>
+
+          <ul class="about-highlights">
+            <li><strong>Experience:</strong> Linux & cloud infrastructure, CI/CD, container orchestration.</li>
+            <li><strong>Strong at:</strong> Automation, scripting (Bash, Python), Docker, Kubernetes.</li>
+            <li><strong>Interested in:</strong> Observability, performance tuning, and scalable platform design.</li>
+          </ul>
+
+          <div class="about-cta">
+            <a class="btn" href="/resume.pdf" target="_blank" rel="noopener">Download CV</a>
+            <a class="btn secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <aside class="about-right" aria-label="Skills and stats">
+          <h3>Skills</h3>
+          <div class="skills">
+            <span class="skill">Linux</span>
+            <span class="skill">Docker</span>
+            <span class="skill">Kubernetes</span>
+            <span class="skill">Terraform</span>
+            <span class="skill">CI/CD</span>
+            <span class="skill">Python</span>
+            <span class="skill">Monitoring</span>
+          </div>
+
+          <h3 style="margin-top:1rem;">Quick stats</h3>
+          <div class="stats">
+            <div class="stat"><strong>5+</strong><div class="stat-label">Years</div></div>
+            <div class="stat"><strong>50+</strong><div class="stat-label">Deploys</div></div>
+            <div class="stat"><strong>20+</strong><div class="stat-label">Automations</div></div>
+          </div>
+        </aside>
+      </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="section container" aria-labelledby="projectsHeading">
       <h2 id="projectsHeading">Projects</h2>
       <div class="grid">
@@ -90,6 +127,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section container alt-bg" aria-labelledby="contactHeading">
       <h2 id="contactHeading">Contact</h2>
 
@@ -141,3 +179,4 @@
   </script>
 </body>
 </html>
+
